@@ -1,6 +1,6 @@
 h1: Develop and Run Web & Mobile Apps
 
-h2: 
+h2:
   prefix: Full-Stack JavaScript Platform for
   typing:
     - <strong>AngularJS 1<span class="highlighted"> &plus; </span>Ionic 1</strong>
@@ -40,31 +40,31 @@ feature_highlights:
 feature_details:
 
   column_left:
-    h3: One Platform to...
+    h3: Speed-up your development...
     img: http://placehold.it/450x100?text=Illustration-Picture
     items:
-      - h4: Develop faster
-        p: All-in-one IDE, Templating, bootstrap your project in few minutes, full Angular integration with Backend, Ionic to develop Hybrid Apps.
+      - h4: Code from ready-made skeletons
+        p: Install in one-click, check your configuration in a look, all libraries you need already integrated!
         img:
-          url: img/prototype.png
+          url: img/01-skeleton.png
           alt: Prototype
 
-      - h4: Save time
-        p: One click installation, Built-in DB with advanced Designer, Server in the Cloud, Ready to use connectors to any external DB and Reuse your backend modules.
+      - h4: Develop the fullstack via the same IDE
+        p: Choose your project template with full Angular integration with Backend and Ionic to develop Hybrid Apps.
         img:
-          url: img/boost.png
+          url: img/02-faster.png
           alt: Boost
 
-      - h4: Integrate and secure your data
-        p: "A JavaScript Abstract Layer to integrate any data in JavaScript: Web Service, Relational DB, Built-in DB."
+      - h4: Integrate your data in JavaScript
+        p: Integrate, extend, manage your data in JS from Web Services, Relational DB or the Built-in DB
         img:
-          url: img/integrate.png
+          url: img/03-integrate.png
           alt: Integrate
 
-      - h4: Build & Run Cross-Platform Apps
-        p: Develop and Run Web Apps and Hybrid or Native Mobile Apps. Your server on-prem or in the Cloud.
+      - h4: Code once, deploy everywhere
+        p: One Backend to your multiple Frontend projects! Deploy and Run Wakanda on your server or in the Wakanda Cloud.
         img:
-          url: img/omnichannel.png
+          url: img/04-code.png
           alt: Omnichannel
 
   column_right:
@@ -89,7 +89,7 @@ feature_details:
           alt: Integrate
 
 slideshow:
-  - video: 
+  - video:
       id: 203100606
       alt: Templates
     # If have more than one video, you can define navigation buttons like this:
@@ -98,19 +98,19 @@ slideshow:
     url: https://wakanda.github.io/wakanda-studio/choose-templates.html
 
 quotes:
-  - p: Duis eget lacus lacus. <a href="#">Duis non nisi</a> ac lectus blandit maximus. Aenean convallis turpis et lectus elementum, et commodo urna iaculis.
+  - p: Incredible work guys, wakanda looks stunning!!!!
     author:
-      name: Peter
-      username: "@PeterBot"
-      url: https://twitter.com/@PeterBot
-      img: http://placehold.it/150x150?text=Pic1
+      name: João
+      username: "@Djayci"
+      url: https://twitter.com/DjayCi/status/791280762918232064
+      img: https://pbs.twimg.com/profile_images/3440695201/10bb1785880137833ab77639791c15b2.png
 
-  - p: Proin eu efficitur libero. Nunc <a href="#">aliquet</a> massa sit amet sodales sagittis. In ac vehicula arcu. Ut et arcu <a href="#">maximus</a>, dignissim ante non, porttitor nunc.
+  - p: To all @angularjs & @Ionicframework developers, I would highly recommend checking out the @wakandasoft platform!
     author:
-      name: Alice
-      username: "@hiAlice"
-      url: https://twitter.com/@HiAlice
-      img: http://placehold.it/150x150?text=Pic2
+      name: Corey
+      username: "@thecoreyshelton"
+      url: https://twitter.com/thecoreyshelton/status/809485633316130816
+      img: https://pbs.twimg.com/profile_images/549945253977804800/JOx5qkcX.jpeg
   # You can set more than 2 quotes, a carousel will automatically be used.
 
 mail_form:
