@@ -1,0 +1,83 @@
+
+<div id="consultant">
+    <div id="filters">
+        <div class="row">
+            <div class="container" id="started">
+                <p>Getting started with templates : </p>
+                <ol>
+                    <li>Download the files</li>
+                    <li>Install</li>
+                    <li>Lorem ipsum dolor</li>
+                </ol>
+            </div>
+        </div>
+        <div class="row">
+            <div class="container" id="search">
+                <label for="quicksearch_consultant" class="title col-form-label">Search : </label>
+                <input class="form-control quicksearch" type="text" id="quicksearch_consultant" placeholder="Keywords" />
+            </div>
+        </div>
+        
+        <div class="options" id="options_consultant">
+            {% for filter in site.data.marketplace.filters.consultant %}
+            <div class="row">
+                <div class="option-set container" data-group="{{ filter.id }}">
+                    <p class="title">{{ filter.title }} : </p>
+                    <ul class="list-filter">
+                        {% for tag in filter.values %}
+                            <li>
+                                <label class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input button filter_checkbox" value=".{{ tag.filter_id }}">
+                                    <span class="custom-control-indicator"></span>
+                                    <span class="custom-control-description">{{ tag.title }}</span>
+                                </label>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                </div>
+            {% endfor %}
+            
+            <div class="row">
+                <div class="option-set container" data-group="country">
+                    <p class="title">Country : </p>
+                    <select name="country" multiple="multiple" class="filter_checkbox"></select>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row filtered_items" id="filtered_items_consultant">
+            {% assign posts = site.marketplace | where: "category", "consultant" | sort: 'date' | reverse %}
+            {% for post in posts %}
+                {% assign index_post = forloop.index %}
+                <div class="item col-md-4 col-xs-6 {{ post.category_consultant | join: ' '}} {{ post.type | join: ' '}} {{ post.country.code | join: ' '}}">
+                    <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+                        <div class="flipcard">
+                            <div class="front">
+                                {% if post.type contains 'prime'  %}
+                                    <p class="prime-badge">&nbsp; </p>
+                                {% endif %}
+                                <div class="logo-consultant">
+                                    <img src="{{ post.logo }}" alt="{{ post.title }}">
+                                </div>
+                            </div>
+                            <div class="back">
+                                <div class="content">
+                                    <div class="top">
+                                        <h3 class="title">{{ post.title }}</h3>
+                                        <p class="description">{{ post.description }}</p>
+                                    </div>
+                                    <div class="bottom">
+                                        <p class="localisation"><i class="icon-map-marker"></i> {{ post.country.name }}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>

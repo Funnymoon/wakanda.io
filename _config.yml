@@ -14,9 +14,17 @@ defaults:
   -
     values:
       layout: "index"
+  - scope:
+      path: ""
+      type: marketplace
+    values:
+      layout: marketplace
 exclude: [
 .git,
 .gitignore,
 README.md,
 LICENSE
 ]
+collections:
+  marketplace:
+    output: true

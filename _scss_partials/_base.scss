@@ -1,6 +1,10 @@
+/** Mixins */
+@import "mixin";
+
 /** General theme */
 @import "variables";
 @import "buttons";
+@import "icons";
 @import "type";
 @import "layout";
 @import "mail_form";

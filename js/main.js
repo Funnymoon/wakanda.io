@@ -98,3 +98,223 @@ for (var key in platformNames) {
         </tr>"
     );
 };
+
+
+
+
+/*** ================== Start Marketplace Script ================== ***/
+var $container;
+var filters = {};
+var stored_data = [];
+$(function(){
+    if($('.marketplace').length) {
+        markete_init();
+    }
+});
+
+/**
+ * Initialize markete function
+ */
+function markete_init() {
+    // Add flip animation to consultant
+     $(".flipcard").flip({
+       axis: 'x',
+      trigger: 'hover',
+       speed:800
+      });
+
+    // Create stored filter for each tabs
+    $('#market-tab a').each(function(){
+        var tab = $(this).attr('href').replace('#', '');
+        stored_data[tab] = {'qsRegex': false, comboFilter: false};
+    });
+
+    // Apply filtre for active tab
+    apply_filter($('.nav-link.active').attr('href').replace('#', ''));
+
+    // Apply filter on tab change
+    $('#market-tab a').click(function (e) {
+        e.preventDefault()
+        $(this).tab('show');
+        apply_filter($(this).attr('href').replace('#', ''));
+    });
+}
+
+function apply_filter(tab) {
+    $container = $('#filtered_items_'+tab);
+    var qsRegex;
+    var comboFilter;
+    
+    // Initialize filter
+    var $filter = $container.isotope({
+        itemSelector: '.item',
+        layoutMode: 'fitRows',
+        filter: function() {
+            var $this = $(this);
+            var searchResult = stored_data[tab].qsRegex ? $this.text().match( stored_data[tab].qsRegex ) : true;
+            var buttonResult = stored_data[tab].comboFilter ? $this.is( stored_data[tab].comboFilter ) : true;
+            return searchResult && buttonResult;
+        }
+    });
+
+    // do stuff when checkbox / select change
+    $('#options_'+tab).on( 'change', function( jQEvent ) {
+        var $element = $( jQEvent.target );
+
+        if($element.is(":checkbox")) {
+            manageElement( $element, 'checkbox' );
+        }
+        else if ( $element.is( "select" ) ) {
+            manageElement( $element, 'select' );
+        }
+        
+        stored_data[tab].comboFilter = getComboFilter( filters );
+
+        $container.isotope();
+
+    });
+
+    // Apply search
+    var $quicksearch = $('#quicksearch_'+tab).keyup( debounce( function() {
+        stored_data[tab].qsRegex = new RegExp( $quicksearch.val(), 'gi' );
+        $container.isotope();
+    }) );
+
+    // Inialize country dropdown
+    if(tab == 'consultant') {
+        init_country();
+    }
+}
+
+/**
+ * Set timeout after keyup
+ */
+function debounce( fn, threshold ) {
+  var timeout;
+  return function debounced() {
+    if ( timeout ) {
+      clearTimeout( timeout );
+    }
+    function delayed() {
+      fn();
+      timeout = null;
+    }
+    setTimeout( delayed, threshold || 100 );
+  };
+}
+
+/**
+ * Grouped filter for isotope
+ */
+function getComboFilter( filters ) {
+    var i = 0;
+    var comboFilters = [];
+    var message = [];
+
+    for ( var prop in filters ) {
+        message.push( filters[ prop ].join(' ') );
+        var filterGroup = filters[ prop ];
+        // skip to next filter group if it doesn't have any values
+        if ( !filterGroup.length ) {
+        continue;
+        }
+        if ( i === 0 ) {
+        // copy to new array
+        comboFilters = filterGroup.slice(0);
+        } else {
+        var filterSelectors = [];
+        // copy to fresh array
+        var groupCombo = comboFilters.slice(0); // [ A, B ]
+        // merge filter Groups
+        for (var k=0, len3 = filterGroup.length; k < len3; k++) {
+            for (var j=0, len2 = groupCombo.length; j < len2; j++) {
+            filterSelectors.push( groupCombo[j] + filterGroup[k] ); // [ 1, 2 ]
+            }
+
+        }
+        // apply filter selectors to combo filters for next group
+        comboFilters = filterSelectors;
+        }
+        i++;
+    }
+
+    var comboFilter = comboFilters.join(', ');
+    return comboFilter;
+}
+
+/**
+ * Add filter element to grouped case
+ */
+function manageElement( $el, $type ) {
+    var element = $el[0];
+
+    var group = $el.parents('.option-set').attr('data-group');
+    // create array for filter group, if not there yet
+    var filterGroup = filters[ group ];
+    if ( !filterGroup ) {
+        filterGroup = filters[ group ] = [];
+    }
+
+    if($type == 'checkbox') {
+        var isAll = $el.hasClass('all');
+        // reset filter group if the all box was checked
+        if ( isAll ) {
+            delete filters[ group ];
+            if ( !element.checked ) {
+            element.checked = 'checked';
+            }
+        }
+        // index of
+        var index = $.inArray( element.value, filterGroup );
+
+        if ( element.checked ) {
+            var selector = isAll ? 'input' : 'input.all';
+            $el.siblings( selector ).removeAttr('checked');
+
+
+            if ( !isAll && index === -1 ) {
+            // add filter to group
+            filters[ group ].push( element.value );
+            }
+
+        } else if ( !isAll ) {
+            // remove filter from group
+            filters[ group ].splice( index, 1 );
+            // if unchecked the last box, check the all
+            if ( !$el.siblings('[checked]').length ) {
+            $el.siblings('input.all').attr('checked', 'checked');
+            }
+        }
+    }
+    else if($type == 'select') {
+        var values = $(element).val().map(function(a) { return "." + a; });
+        filters[ group ] =  values;
+    }
+}
+
+
+/**
+ * Inialize country
+ */
+function init_country() {
+    $("[name='country']").select2({
+        placeholder: "Type the first letters",
+        templateResult: formatCountry,
+        data: isoCountries,
+        maximumSelectionLength: 1,
+    });
+}
+
+/**
+ * Add icon country on dropdown
+ */
+function formatCountry (country) {
+    if (!country.id) { return country.text; }
+    var $country = $(
+    '<span class="flag-icon flag-icon-'+ country.id.toLowerCase() +' flag-icon-squared"></span>' +
+    '<span class="flag-text">'+ country.text+"</span>"
+    );
+    return $country;
+};
+
+/*** ================== End Marketplace Script ================== ***/
