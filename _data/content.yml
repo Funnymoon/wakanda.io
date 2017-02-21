@@ -78,13 +78,13 @@ feature_details:
           alt: Integrate
 
       - h4: JavaScript Abstract Layer
-        p: Whatever the datasource (Relational DB, Web Services, …), integrate your business entities directly. Much more : add security layer, events, extend your data model without the worry of low level connection to remote data sources. REST API generated automatically.
+        p: Whatever the datasource (Relational DB, Web Services, …), integrate your business entities directly. Much more: add security layer, events, extend your data model without the worry of low level connection to remote data sources. REST API generated automatically.
         img:
           url: img/angular2.svg
           alt: Integrate
 
       - h4: New external DB support
-        p: Built-in DB like! Thanks to the new ODBC Connector, integrate MS SQL DB and use data like Wakanda DB : Data Designer, REST API generated  ... 
+        p: Built-in DB like! Thanks to the new ODBC Connector, integrate MS SQL DB and use data like Wakanda DB : Data Designer, REST API generated  ...
         img:
           url: img/ionic2.png
           alt: Integrate
