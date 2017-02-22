@@ -70,20 +70,21 @@ feature_details:
   column_right:
     h3: New in Wakanda 2.0
     items:
-      - h4: TypeScript support
-        p: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut viverra ut tellus ac malesuada. Aenean sit amet risus vestibulum, pharetra arcu non, volutpat quam.
+      - h4: NodeJS support
+        p: Develop Server Side JS in Single Threaded Event Loop architecture and get access to more than 230000 modules!
+
         img:
           url: img/ts.svg
           alt: Integrate
 
-      - h4: Angular 2 support
-        p: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut viverra ut tellus ac malesuada. Aenean sit amet risus vestibulum, pharetra arcu non, volutpat quam.
+      - h4: JavaScript Abstract Layer
+        p: Whatever the datasource (Relational DB, Web Services, …), integrate your business entities directly, add security layer, add events, extend your data model without the worry of low level connection to remote data sources. REST API generated automatically.
         img:
           url: img/angular2.svg
           alt: Integrate
 
-      - h4: Ionic 2 support
-        p: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut viverra ut tellus ac malesuada. Aenean sit amet risus vestibulum, pharetra arcu non, volutpat quam.
+      - h4: New external DB support
+        p: Built-in DB like! Thanks to the new ODBC Connector, integrate MS SQL DB and use data like Wakanda DB, use the Data Designer, REST API generated  ...
         img:
           url: img/ionic2.png
           alt: Integrate
@@ -131,7 +132,7 @@ community:
 event:
   title: Next Wakanda & JavaScript events
   paragraphs:
-    - Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
+    - Meet our team at <a href="https://www.ng-conf.org/" >The World's Original Angular Conference </a> on April 5th-7th 2017, Salt Lake City, UT
     - We can help you start a new JavaScript Meetup. <a href="javascript:void(0);" onclick="olark('api.box.expand')">Contact us!</a>
   calendar:
   - month: March
