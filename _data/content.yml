@@ -91,12 +91,12 @@ feature_details:
 
 slideshow:
   - video:
-      id: 203100606
+      id: 196703573
       alt: Templates
     # If have more than one video, you can define navigation buttons like this:
     # btn: <i class="fa fa-magic" aria-hidden="true"></i> Templates
-    title: Create a new project from our seed templates.
-    url: https://wakanda.github.io/wakanda-studio/choose-templates.html
+    title: Full Platform to develop, build, deploy and run your Apps
+    url: https://ssalibi.github.io/wakanda-studio/
 
 quotes:
   - p: Incredible work guys, wakanda looks stunning!!!!
