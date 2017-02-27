@@ -1,6 +1,14 @@
 ---
 id: index
 layout: default
+css:
+  - css/lib/remodal.css
+  - css/lib/remodal-default-theme.css
+
+scripts:
+  - js/remodal.min.js
+  - js/lib/jquery-validate/jquery.validate.js
+  - js/lib/jquery.uniform.js
 ---
 
 <section id="section-headline" class="module parallax parallax-bg-1">
@@ -254,7 +262,7 @@ layout: default
                 <div class="dl-info"><span>Free download</span></div>
               </td>
               <td class="action">
-                <a class="btn btn-lg btn-inverted" href="/wakanda-app-factory">
+                <a class="btn btn-lg btn-inverted" href="#modal">
                   <span class="fa fa-download"></span> Download for <span class="platform-name"></span>
                 </a>
                 <div class="dl-info">
@@ -390,3 +398,6 @@ layout: default
     </div>
   </div>
 </section>
+
+{% include community-mailchimp.html %}
+  

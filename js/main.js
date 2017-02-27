@@ -88,6 +88,7 @@ $("#version-stable").append(versionCommunityLink.stable);
 $("#version-preview").append(versionCommunityLink.preview);
 $("#community-dl").attr('href', stableLinks[platform]);
 
+
 for (var key in platformNames) {
     document.createElement("td", document.createElement)
     $( "#all-downloads" ).append(
@@ -99,6 +100,10 @@ for (var key in platformNames) {
     );
 };
 
+
+$("option[data-detected='"+platform+"']" ).attr('selected', 'selected');
+//$("select, input:checkbox, input:radio, input:file", "#community-download").uniform();
+$("#community-download form").validate({});
 
 
 

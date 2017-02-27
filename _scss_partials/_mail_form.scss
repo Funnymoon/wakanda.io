@@ -28,3 +28,94 @@
         }
     }
 }
+
+#community-download{
+    //@import "uniform";
+    padding: 5px 15px;
+    h2{
+        text-align: center;
+        @include font-size(26px);
+    }
+    .remodal-close{
+        right: 5px;
+        top: 5px;
+        left: initial;
+        z-index: 3;
+        background-color: $dark-bg-transition;
+        color: white;
+        @include border-radius(50%);
+        &:hover{
+            background-color: $dark-bg;
+        }
+    }
+    .input-group{
+        display: block;
+        a{
+            font-weight: bold;
+            color: $base-color;
+            &:hover{
+                color: $light-bg-color;
+            }
+        }
+    }
+    input[type="submit"] {
+        background-color: $dark-bg;
+        color: white;
+        padding: 5px 40px;
+        height: 100%;
+        &:hover, &:focus, &:active {
+            background-color: $light-bg-color;
+            color: $btn-default-color;
+        }
+    }
+
+    input[type="checkbox"]{
+        -webkit-appearance: none !important;
+        -moz-appearance: none !important;
+        -ms-appearance: none !important;
+        -o-appearance: none !important;
+        appearance: none !important;
+        position: relative;
+        top: 7px;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        height: 25px;
+        width: 25px  !important;
+        transition: all 0.15s ease-out 0s;
+        background: #cbd1d8;
+        border: none  !important;
+        color: #fff;
+        cursor: pointer;
+        display: inline-block  !important;
+        margin-right: 0.5rem;
+        outline: none;
+        position: relative;
+        z-index: 1000;
+    }
+    input[type="checkbox"]:hover{
+        background: #9faab7;
+    }
+    input[type="checkbox"]:checked{
+        background: $dark-bg;
+    }
+    input[type="checkbox"]:checked::before{
+        height: 25px;
+        width: 25px;
+        position: absolute;
+        content: '\f00c';
+        font-family:'FontAwesome';
+        display: inline-block;
+        @include font-size(20px);
+        text-align: center;
+        line-height: 10px;
+    }
+    input[type="checkbox"]:checked::after{
+        background: $dark-bg;
+        content: '';
+        display: block;
+        position: relative;
+        z-index: 100;
+    }
+
+}

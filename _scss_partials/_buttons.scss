@@ -32,10 +32,10 @@
     }
 }
 
-*:before,
+/**:before,
 *:after {
   z-index: -1;
-}
+}*/
 .btn-default{
     position: relative;
     overflow: hidden;
