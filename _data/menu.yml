@@ -1,20 +1,17 @@
 items:
 
-  - title: What we do
-    url: http://www.wakanda.io/wakanda-platform
-  
+  - title: Get started
+    url: https://ssalibi.github.io/wakanda-studio
+
   - title: Pricing
     url: http://www.wakanda.io/pricing
 
   - title: Partners
     url: http://www.wakanda.io/partners-directory
-  
+
   - title: Blog
     url: https://blog.wakanda.io
     target: _blank
-
-  - title: Get started
-    url: https://wakanda.github.io/wakanda-studio
 
   - title: Sign in
     url: https://console.wakanda.io
