@@ -103,8 +103,32 @@ for (var key in platformNames) {
 
 $("option[data-detected='"+platform+"']" ).attr('selected', 'selected');
 //$("select, input:checkbox, input:radio, input:file", "#community-download").uniform();
-$("#community-download form").validate({});
-
+$.validator.addMethod('email', function (value, element) {
+    var filter = /^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
+    return this.optional(element) || filter.test(value);
+}, "adresse mail invalide");
+$("#community-download form").validate({
+    rules:{
+        "EMAIL":{
+            required:true,
+            email: true
+        }
+    },
+    errorPlacement: function (error, element) {
+        if (element.attr("type") == "checkbox") {
+            console.log('eeee');
+            //error.insertAfter($(element).parent());
+            $(element).parent().append(error);
+        }else{
+            error.insertAfter($(element));
+        }
+    }
+});
+$("#community-download form").submit(function() {
+    if($(this).valid()) {
+        // @TODO Generate download file
+    }
+});
 
 
 /*** ================== Start Marketplace Script ================== ***/
