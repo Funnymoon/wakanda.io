@@ -26,7 +26,7 @@ body{
 }
 #section-headline,
 #section-download{
-    background-color: $light-bg;
+    //background-color: $light-bg;
 }
 #section-feature-highlights,
 #section-events,
@@ -337,4 +337,13 @@ body{
 	width: 25px !important;
     height: 25px;
     top: -7px;
+}
+
+/**
+* Home page
+*/
+#section-headline .btn{
+	display: block;
+    width: 310px;
+    margin: 10px auto;
 }

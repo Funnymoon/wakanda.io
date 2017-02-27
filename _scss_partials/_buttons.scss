@@ -31,3 +31,76 @@
         background-color: $highlighted-color-transition;
     }
 }
+
+*:before,
+*:after {
+  z-index: -1;
+}
+.btn-default{
+    /*background-color: $white-color;
+    color: $dark-bg;
+    border: 2px solid $dark-bg;
+    &.active, &:hover, &:focus, &:active, .show>&.dropdown-toggle {
+        background-color: $dark-bg;
+        color: $white-color;
+    }*/
+
+
+
+    position: relative;
+    overflow: hidden;
+    background-color: $white-color;
+    color: $dark-bg;
+    border: 2px solid $dark-bg;
+    z-index: 1;
+    &:before, &:after,
+    & span:before,
+    & span:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 0;
+        width: 0%;
+        height: 100%;
+        background: rgba(35, 42, 51, 0.45);
+        -webkit-transition: 0.4s;
+        transition: 0.4s;
+    }
+    
+    &:after,
+    span:before {
+        left: auto;
+        right: 0;
+    }
+    
+    span:before,
+    span:after {
+        transition-delay: 0.4s;
+    }
+    &:hover {
+        color: $white-color;
+        &:before,
+        &:after,
+        span:before,
+        span:after {
+            width: 100%;
+        }
+    }
+    
+    &.active, &:hover, &:focus, &:active, .show>&.dropdown-toggle {
+        color: $white-color;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
