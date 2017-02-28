@@ -45,9 +45,14 @@
             padding-left: 70px;
             padding-right: 60px;
         }
+
+				p {
+						margin-bottom: 3px;
+				}
         @media(max-width:767px) {
             p {
                 padding-right: 20px;
+								margin-bottom: 3px;
             }
         }
     }
