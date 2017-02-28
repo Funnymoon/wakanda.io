@@ -107,6 +107,7 @@ $.validator.addMethod('email', function (value, element) {
     var filter = /^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
     return this.optional(element) || filter.test(value);
 }, "adresse mail invalide");
+
 $("#community-download form").validate({
     rules:{
         "EMAIL":{
@@ -125,9 +126,14 @@ $("#community-download form").validate({
     }
 });
 $("#community-download form").submit(function() {
+    if (grecaptcha.getResponse() == '') {
+        $('#recaptcha_error').removeClass('hidden');
+        return false;
+    }
     if($(this).valid()) {
         // @TODO Generate download file
     }
+    return false;
 });
 
 

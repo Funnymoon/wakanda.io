@@ -151,8 +151,8 @@
         height: 38px !important;
     }*/
 
-    label.error{
-        display: block !important;
+    label.error, div.error{
+        //display: block !important;
         width: 100%;
         color: red;
         margin: 0 !important;
