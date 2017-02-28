@@ -32,7 +32,7 @@ $(function() {
       stringsElement: $('#typed-strings'),
       startDelay: 1500,
       backDelay: 1000,
-      typeSpeed: 0
+      typeSpeed: 80
     }
     $(".typed-text").typed(options);
 });
