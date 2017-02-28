@@ -30,22 +30,25 @@
 }
 
 #community-download{
+    width: 25%;
     //@import "uniform";
     padding: 5px 15px;
     h2{
         text-align: center;
         @include font-size(26px);
     }
+    .mc-field-group{
+        width: 100% !important;
+        margin: 0 auto;
+        //text-align: center;
+    }
     .remodal-close{
-        right: 5px;
-        top: 5px;
+        right: 0;
+        top: 0;
         left: initial;
         z-index: 3;
-        background-color: $dark-bg-transition;
-        color: white;
-        @include border-radius(50%);
-        &:hover{
-            background-color: $dark-bg;
+        &:before{
+            @include font-size(35px);
         }
     }
     .input-group{
@@ -53,28 +56,29 @@
         a{
             font-weight: bold;
             color: $base-color;
+            text-decoration: underline;
             &:hover{
                 color: $light-bg-color;
             }
         }
     }
     input[type="submit"] {
-        background-color: $dark-bg;
+        background-color: $main-color;
         color: white;
         padding: 5px 40px;
         height: 100%;
         &:hover, &:focus, &:active {
-            background-color: $light-bg-color;
+            background-color: $main-color-transition;
             color: $btn-default-color;
         }
     }
 
     input, select{
         display: block;
-        width: 100%;
-        padding: .5rem .75rem;
-        font-size: 1rem;
-        line-height: 1.25;
+        //width: 100%;
+        //padding: .5rem .75rem;
+        //font-size: 1rem;
+        //line-height: 1.25;
         color: #464a4c;
         background-color: #fff;
         background-image: none;
@@ -88,7 +92,10 @@
             @include box-shadow(0 0 3px $dark-bg);
         }
     }
-
+    input[type="checkbox"]{
+        margin-right: 5px;
+    }
+    /*
     input[type="checkbox"]{
         -webkit-appearance: none !important;
         -moz-appearance: none !important;
@@ -137,15 +144,12 @@
         position: relative;
         z-index: 100;
     }
+    
     select{
-        //@include border-radius(4px);
-        /*-webkit-appearance:none;
-        -moz-appearance:none;
-        appearance:none;*/
         padding: 10px 8px !important;
         width: 100% !important;
         height: 38px !important;
-    }
+    }*/
 
     label.error{
         display: block !important;
