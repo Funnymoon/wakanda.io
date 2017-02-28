@@ -127,13 +127,14 @@ $("#community-download form").validate({
 });
 $("#community-download form").submit(function() {
     if (grecaptcha.getResponse() == '') {
-        $('#recaptcha_error').removeClass('hidden');
+        $('#recaptcha-container .error').removeClass('hidden');
         return false;
+    }else {
+        $('#recaptcha-container .error').addClass('hidden');
     }
     if($(this).valid()) {
         // @TODO Generate download file
     }
-    return false;
 });
 
 
