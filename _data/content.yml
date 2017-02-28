@@ -1,10 +1,10 @@
 h1: Develop and Run Web & Mobile Apps
 
 h2:
-  prefix: Full-Stack JavaScript Platform for
+  prefix: Full-Stack JavaScript Platform
   typing:
-    - <strong>Web<span class="highlighted"> &plus; </span>Hybrid<span class="highlighted"> &plus; </span>Native Apps</strong>
-    - <strong>coding<span class="highlighted"> to </span> going live!</strong>
+    - <strong>for Web<span class="highlighted"> &plus; </span>Hybrid<span class="highlighted"> &plus; </span>Native Apps</strong>
+    - <strong><span class="highlighted"> from </span> coding<span class="highlighted"> to </span> going live!</strong>
 
 feature_highlights:
   - p: Open Source Platform
