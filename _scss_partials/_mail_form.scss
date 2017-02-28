@@ -150,9 +150,11 @@
         width: 100% !important;
         height: 38px !important;
     }*/
-
+    label{
+        font-weight: normal !important;
+    }
     label.error{
-        //display: block !important;
+        display: block !important;
         width: 100%;
         color: red;
         margin: 0 !important;
