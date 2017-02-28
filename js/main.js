@@ -69,10 +69,9 @@ function getPlatform() {
 
 var platformNames = {
     macOS: "macOS",
-    win64: "Windows",
+    win64: "Windows (64 bits)",
     win32: "Windows (32 bits)",
-    linux64: "Linux",
-    linux32: "Linux (32 bits)"
+    linux: "Linux (Server only)",
 };
 
 /**
