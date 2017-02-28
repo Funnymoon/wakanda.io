@@ -138,16 +138,13 @@ event:
   calendar:
   - month: March
     day: 15
-    title: User experience session
+    title: User testing session
+    p: Be part of the adventure 
     p: Get a $50 Amazon coupon
-    url: #
+    url: mailto: contact@wakanda.io
   - month: Apr.
     day: 5
     title: User experience session
     p: Get a $50 Amazon coupon
     url: #
-  - month: May
-    day: 9
-    title: User experience session
-    p: Get a $50 Amazon coupon
-    url: #
+
