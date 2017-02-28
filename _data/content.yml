@@ -49,20 +49,20 @@ feature_details:
           url: img/icons/files.png
           alt: Prototype
 
-      - h4: Develop the fullstack via the same IDE
-        p: Choose your project template with full Angular integration with Backend and Ionic to develop Hybrid Apps.
+      - h4: One IDE to Full-Stack programming
+        p: Develop your Font-End, your Back-End and your data integration in the same IDE
         img:
           url: img/icons/fullstack.png
           alt: Boost
 
-      - h4: Integrate your data in JavaScript
-        p: Integrate, extend, manage your data in JS from Web Services, Relational DB or the Built-in DB
+      - h4: Integrate your data easily in JavaScript
+        p: Integrate, extend, manage your business entities in JavaScript.
         img:
           url: img/icons/data.png
           alt: Integrate
 
       - h4: Code once, deploy everywhere
-        p: One Backend to your multiple Frontend projects! Deploy and Run Wakanda on your server or in the Wakanda Cloud.
+        p: Build omnichannel Apps with one Back-End to your multiple Frontend projects and Mobile Apps! All platforms are supported.
         img:
           url: img/icons/deploy.png
           alt: Omnichannel
@@ -71,20 +71,21 @@ feature_details:
     h3: New in Wakanda 2.0
     items:
       - h4: NodeJS support
-        p: Develop Server Side JS in Single Threaded Event Loop architecture and get access to more than 230000 modules!
+        p: Develop Server Side JS in Single Threaded Event Loop architecture. Get access to more than 230000 modules!
 
         img:
           url: img/icons/node.png
           alt: Integrate
 
       - h4: JavaScript Abstract Layer
-        p: Whatever the datasource (Relational DB, Web Services, …), integrate your business entities directly, add security layer, add events, extend your data model without the worry of low level connection to remote data sources. REST API generated automatically.
+        p: Whatever the datasource (Relational DB, Web Services, …), integrate your business entities directly, add security layer or events.
+
         img:
           url: img/icons/abstractJS.png
           alt: Integrate
 
-      - h4: New external DB support
-        p: Built-in DB like! Thanks to the new ODBC Connector, integrate MS SQL DB and use data like Wakanda DB, use the Data Designer, REST API generated  ...
+      - h4: New DataBases are supported
+        p: Wakanda DB like! Thanks to the new ODBC Connector, integrate to Wakanda MSSQL DB and manipulate directly business entities.
         img:
           url: img/icons/mssql.png
           alt: Integrate
